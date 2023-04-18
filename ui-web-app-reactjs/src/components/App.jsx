@@ -9,6 +9,7 @@ const App = () => {
 
   const handleApiCall = async (e) => {
     const url = 'http://localhost:9999/'+e.target.name;
+    
     displayData.url=url
     let options = {}
       try {
