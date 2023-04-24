@@ -1,5 +1,5 @@
 FROM node:8
-MAINTAINER sarat.e99@gmail.com Sarat Chandra E
+MAINTAINER naresh
 
 
 WORKDIR /app
