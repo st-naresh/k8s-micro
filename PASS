@@ -1,1 +1,5 @@
 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
+
+
+//sh 'kubectl create secret docker-registry javapipe --docker-username comdevops --docker-password Dev-ops@123'
+       sh 'kubectl create secret generic javapipe --from-file=.dockerconfigjson=/opt/docker/config.json -n ms --type kubernetes.io/dockerconfigjson --dry-run=client -oyaml > secret.yaml'
