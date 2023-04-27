@@ -134,8 +134,6 @@ pipeline {
                             sh 'minikube status'
                             //sh 'kubectl create ns ms'
                             //sh 'kubectl config set-context --current --namespace=ms'
-                           // sh 'kubectl create secret docker-registry javapipe --docker-username comdevops --docker-password Dev-ops@123'
-                           // sh 'kubectl get secret -n ms javapipe -oyaml> secret.yaml'
                             //sh 'kubectl apply -f secret.yaml'
                             //sh 'kubectl create secret generic javapipe --from-file=.dockerconfigjson=/opt/docker/config.json -n ms --type kubernetes.io/dockerconfigjson --dry-run=client -oyaml > secret.yaml'
                             //sh 'kubectl apply -f secret.yaml'
