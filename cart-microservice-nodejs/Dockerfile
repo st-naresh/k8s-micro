@@ -1,5 +1,4 @@
 FROM node:14
-MAINTAINER Naresh
 
 WORKDIR /app
 COPY . .
