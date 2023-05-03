@@ -1,7 +1,4 @@
 FROM node:8
-MAINTAINER naresh
-
-
 WORKDIR /app
 COPY . .
 
