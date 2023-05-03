@@ -1,6 +1,4 @@
 FROM maven as build
-MAINTAINER Naresh
-
 
 WORKDIR /app
 COPY . .
