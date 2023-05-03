@@ -1,6 +1,4 @@
 FROM python:3
-MAINTAINER Naresh
-
 COPY . .
 
 RUN pip install flask flask_cors
