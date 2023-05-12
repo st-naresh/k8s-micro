@@ -1,48 +1,49 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-node-app-ingress
+  name: my-ui-app-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: my-node-app.com # replace with your domain name
+  - host: my-ui-app.com # replace with your domain name
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: my-node-app-service
+            name: my-ui-app-service
             port:
               name: http
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-node-app
+  name: my-ui-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-node-app
+      app: my-ui-app
   template:
     metadata:
       labels:
-        app: my-node-app
+        app: my-ui-app
     spec:
       containers:
-      - name: my-node-app
-        image: my-node-app-image
+      - name: my-ui-app
+        image: comdevops/ui:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
-
+      imagePullSecrets:
+      - name: javapipe
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-node-app-service
+  name: my-ui-app-service
 spec:
   type: ClusterIP
   selector:
