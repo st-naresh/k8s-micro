@@ -4,7 +4,6 @@ pipeline {
         stage('SCM Checkout'){
             steps {
             git branch: 'main', credentialsId: 'jen-cred', url: 'https://github.com/st-naresh/sub-micro.git'
-            sh 'ls'
             }
         }
         stage('SonarQube Analysis') {
